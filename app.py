@@ -6,7 +6,19 @@ app = Flask(__name__)
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
     if request.method == 'GET':
-        return 'Hello World!'
+        return render_template('home.html')
+    else:
+        data = request.form
+
+        return render_template('cv.html', data=data)
+
+@app.route('/howtouse')
+def howtouse():
+    return render_template('howtouse.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

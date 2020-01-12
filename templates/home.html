@@ -9,7 +9,13 @@
 
 {% block body %}
 <form method="POST" action="/">
-    <input type="text" name="name" placeholder="Enter your name" required>
+    <div class="basic">
+        <h2>Basics</h2>
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="number" name="phone" placeholder="Enter your phone number" required>
+    </div>
+    
     <input class="btn btn-primary" type="submit" value="Submit">
 </form>
 {% endblock %}

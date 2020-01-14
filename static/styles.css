@@ -1,7 +1,4 @@
-html {
-    overflow-x: hidden; 
-}
-body {
+body{
     margin: 0;
 }
 form{
@@ -104,8 +101,8 @@ img{
     align-self: auto;
     width: fit-content;
 }
-p {
-    position: fixed;
+p[id='footer'] {
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;

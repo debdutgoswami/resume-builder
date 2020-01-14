@@ -8,9 +8,9 @@ def home():
     if request.method == 'GET':
         return render_template('home.html')
     else:
-        data = request.form
-
-        return render_template('cv.html', data=data)
+        data = dict(request.form)
+        data['skills'] = data['skills'].split(', ')
+        return render_template('cv.html',len_skills=len(data['skills']) , data=data)
 
 @app.route('/howtouse')
 def howtouse():

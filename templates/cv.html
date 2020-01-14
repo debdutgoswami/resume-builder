@@ -83,14 +83,9 @@
 			
 			<div class="sectionContent">
 				<ul class="keySkills">
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
+					{% for i in range(0,len_skills) %}
+						<li>{{data['skills'][i]}}</li>
+					{% endfor %}
 				</ul>
 			</div>
 			<div class="clear"></div>

@@ -9,11 +9,16 @@
 
 {% block body %}
 <form method="POST" action="/">
-    <div class="basic">
+    <div class="personal">
         <h2>Basics</h2>
         <input type="text" name="name" placeholder="Enter your name" required>
         <input type="email" name="email" placeholder="Enter your email" required>
         <input type="number" name="phone" placeholder="Enter your phone number" required>
+    </div>
+    
+    <div class="skills">
+        <h2>Skills</h2>
+        <input type="text" name="skills" id="skills" placeholder="Enter your skills separated by comma (,)" required>
     </div>
     
     <input class="btn btn-primary" type="submit" value="Submit">

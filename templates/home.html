@@ -8,7 +8,19 @@
 {% block heading %}Resume Builder{% endblock %}
 
 {% block body %}
-<form method="POST" action="/">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var i = 1
+        $("#exp").on('click', '#addbtn',function(){
+            $("#tb2").clone().find("input:text").val("").end().appendTo("#exp");
+            i++;
+        });
+    });
+</script>
+<form method="POST" action="/" id="f1">
+
+    <!-- Basic -->
     <div class="personal">
         <h2>Basics</h2>
         <input type="text" name="name" placeholder="Enter your name" required>
@@ -16,41 +28,30 @@
         <input type="number" name="phone" placeholder="Enter your phone number" required>
     </div>
     
+    <!-- Skills -->
     <div class="skills">
         <h2>Skills</h2>
         <input type="text" name="skills" id="skills" placeholder="Enter your skills separated by comma (,)" required>
     </div>
 
-    
+    <!-- Experience -->
+    <div class="experience" id="exp">
         <h2>Experience</h2>
-        <table  class="table table-hover small-text" id="tb2">
-            <tr>
+        <fieldset id="tb2">
+        <table  class="table table-hover small-text">
+            <tbody>
+            <tr id="addrow">
                 <td><input id="cname" type="text" name="cname" class="field-style field-split25 align-left" placeholder="Company Name" /></td>
                 <td><input id="cpos" type="text" name="cpos" class="field-style field-split25 align-left" placeholder="Position" /></td>
                 <td><input id="cstart" type="text" name="cstart" class="field-style field-split25 align-left" placeholder="Start Date" />	</td>
                 <td><input id="cend" type="text" name="cend" class="field-style field-split25 align-left" placeholder="End Date" /></td>
                 <td><input id="cdescription" type="text" name="cdescription" class="field-style field-split25 align-left" placeholder="Description" /></td>
             </tr>
-            <button onclick="addmore()" type="button">Add More</button>
-            <script>
-                function addmore(){
-    var table = document.getElementById("tb2");
-    var row = table.insertRow(-1);
-    var name = row.insertCell(0);
-    var position = row.insertCell(1);
-    var start = row.insertCell(2);
-    var end = row.insertCell(3);
-    var description = row.insertCell(4);
-
-    name.innerHTML = "new name";
-    position.innerHTML = "new position";
-    start.innerHTML = "new start";
-    end.innerHTML = "new end";
-    description.innerHTML = "new description";
-}
-            </script>
+            </tbody>
         </table>
-    
+        </fieldset>
+        <button id="addbtn" type="button">Add More</button>
+    </div>
 
     <!-- Submit Button -->
     <input class="btn btn-primary" type="submit" value="Submit">

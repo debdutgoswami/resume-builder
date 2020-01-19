@@ -14,13 +14,13 @@ def home():
     else:
         data = request.form # assigning request.form to data for better readability
         
-        exp, skills, edu = list(), list(), list()
+        exp, skills, edu, projects = list(), list(), list(), list()
 
         # extracting experience
         for cname, cpos, cstart, cend, cdescription, clocation in zip(data.getlist('cname'),data.getlist('cpos'),data.getlist('cstart'),data.getlist('cend'),data.getlist('cdescription'),data.getlist('clocation')):
-            exp.append(dict({
+            exp.append({
                 'cname': cname, 'cpos': cpos, 'cstart': cstart, 'cend': cend, 'cdescription':cdescription, 'clocation':clocation
-            }))
+            })
 
         # extracting skills
         for skill in data.getlist('skill'):
@@ -32,7 +32,13 @@ def home():
                 'clg':clg, 'degree': degree, 'gpa': gpa, 'start': start, 'end': end
             })
 
-        return render_template('resume.html', skills=skills,len_skills=len(skills) , data=data, experience=exp, len_exp=len(exp), edu=edu, len_edu=len(edu))
+        # extracting projects
+        for pname, pstart, pend, pdescription, plink in zip(data.getlist('pname'), data.getlist('pstart'), data.getlist('pend'), data.getlist('pdescription'), data.getlist('plink')):
+            projects.append({
+                'pname': pname, 'pstart': pstart, 'pend': pend, 'pdescription': pdescription, 'plink': plink
+            })
+
+        return render_template('resume.html', skills=skills, len_skills=len(skills) , data=data, experience=exp, len_exp=len(exp), edu=edu, len_edu=len(edu), projects=projects, len_projects=len(projects))
 
 
 

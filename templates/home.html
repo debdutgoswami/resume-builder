@@ -11,46 +11,66 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        var i = 1
         $("#exp").on('click', '#addbtn',function(){
-            $("#tb2").clone().find("input:text").val("").end().appendTo("#exp");
-            i++;
+            $("#addrow").clone().find("input:text").val("").end().appendTo("#tb2");
+        });
+        $("#skills").on('click', '#skillbtn', function(){
+            $("#skill").clone().find("input:text").val("").end().appendTo('#skill-append');
+        });
+        $("#edu").on('click','#btn addedu', function(){
+            $("#addedu").clone().find("input:text").val("").end().appendTo("#tb1")
         });
     });
 </script>
+
+<!-- Form -->
 <form method="POST" action="/" id="f1">
 
     <!-- Basic -->
-    <div class="personal">
+    <div class="personal" style="padding-left: 3%;padding-right: 3%;">
         <h2>Basics</h2>
         <input type="text" name="name" placeholder="Enter your name" required>
         <input type="email" name="email" placeholder="Enter your email" required>
         <input type="number" name="phone" placeholder="Enter your phone number" required>
     </div>
-    
-    <!-- Skills -->
-    <div class="skills">
-        <h2>Skills</h2>
-        <input type="text" name="skills" id="skills" placeholder="Enter your skills separated by comma (,)" required>
-    </div>
 
     <!-- Experience -->
-    <div class="experience" id="exp">
+    <div class="experience" id="exp" style="padding-left: 3%; padding-right: 3%;">
         <h2>Experience</h2>
-        <fieldset id="tb2">
-        <table  class="table table-hover small-text">
-            <tbody>
-            <tr id="addrow">
-                <td><input id="cname" type="text" name="cname" class="field-style field-split25 align-left" placeholder="Company Name" /></td>
-                <td><input id="cpos" type="text" name="cpos" class="field-style field-split25 align-left" placeholder="Position" /></td>
-                <td><input id="cstart" type="text" name="cstart" class="field-style field-split25 align-left" placeholder="Start Date" />	</td>
-                <td><input id="cend" type="text" name="cend" class="field-style field-split25 align-left" placeholder="End Date" /></td>
-                <td><input id="cdescription" type="text" name="cdescription" class="field-style field-split25 align-left" placeholder="Description" /></td>
-            </tr>
-            </tbody>
-        </table>
-        </fieldset>
-        <button id="addbtn" type="button">Add More</button>
+        <ul id="tb2">
+            <li id="addrow">
+                <input id="cname" type="text" name="cname" class="field-style field-split25 align-left" placeholder="Company Name" required/><br>
+                <input id="cpos" type="text" name="cpos" class="field-style field-split25 align-left" placeholder="Position" required/>
+                <input id="clocation" type="text" name="clocation" class="field-style field-split25 align-left" placeholder="Location" required/><br>
+                <input id="cstart" type="text" name="cstart" class="field-style field-split25 align-left" placeholder="Start Date" required/>
+                <input id="cend" type="text" name="cend" class="field-style field-split25 align-left" placeholder="End Date" required/><br>
+                <input id="cdescription" type="text" name="cdescription" class="field-style field-split25 align-left" placeholder="Description" style="" required/>
+            </li>
+        </ul>
+        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="" style="width:25px;height:25px; border: 0;" id="addbtn">
+    </div>
+
+    <div class="education" id="edu" style="padding-left: 3%; padding-right: 3%;">
+        <h2>Education</h2>
+        <ul id="tb1">
+            <li id="addedu">
+                <input name="clg"  type="text" placeholder="College/University Name" required>
+                <input name="degree" type="text" placeholder="Degree" required>
+                <input name="gpa" type="text" placeholder="GPA" required>
+                <input name="start" type="text" placeholder="Start Date" required>
+                <input name="end" type="text" placeholder="Ending Date (expected)" required>
+            </li>
+        </ul>
+        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="" style="width:25px;height:25px; border: 0;" id="btn addedu">
+    </div>
+
+    <!-- Skills -->
+    <div class="skills" id="skills" style="padding-left: 3%;padding-right: 3%;">
+        <h2>Skills &amp; Technologies</h2>
+        <div id="skill-append">
+            <input type="text" name="skill" id="skill" placeholder="Enter your skills" required>
+        </div>
+        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="" style="width:25px;height:25px; border: 0;" id="skillbtn">
     </div>
 
     <!-- Submit Button -->

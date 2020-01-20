@@ -99,6 +99,11 @@ body div ul {
 	font-style: italic;
 	margin: 0 0 5px 0;
 }
+.link {
+	font-style: italic;
+	margin: 0 0 5px 0;
+	font-size: small;
+}
 #references {
 	margin-top: 20px;
 }

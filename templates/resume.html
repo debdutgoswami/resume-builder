@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>John Smith</title>
+	<title>{{data['name']}}</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" media="print" href="{{ url_for('static', filename='css/style-resume-print.css') }}">
 	<link rel="stylesheet" media="screen" href="{{ url_for('static', filename='css/style-resume-screen.css') }}">
@@ -13,8 +13,8 @@
 	<h1>{{data['name']}}</h1>
 
 	<p id="bio_left">
-		{{data['phone']}}<br />
-		<a href="mailto:{{data['email']}}">{{data['email']}}</a>
+		M - {{data['phone']}}<br />
+		E - <a href="mailto:{{data['email']}}">{{data['email']}}</a>
 	</p>
 	<p id="bio_right">
 		123 Any Street<br />City, State 99999</p>
@@ -22,10 +22,11 @@
 	<h2>OBJECTIVE</h2>
 	<p class="data">To find a job, etc.</p>
 
+	<!-- experience -->
 	<h2>EXPERIENCE</h2>
 	{% for i in range(0,len_exp) %}
 	<div class="job">
-		<p class="date">{{experience[i]['cstart']}} - {{experience[i]['cend']}}</p>
+		<p class="date">{{experience[i]['cstart']}} -<br> {{experience[i]['cend']}}</p>
 		<div class="job_data">
 			<h3>{{experience[i]['cname']}}</h3>
 			<p class="location">{{experience[i]['clocation']}}</p>
@@ -36,10 +37,26 @@
 	</div>
 	{% endfor %}
 
+	<!-- project -->
+	<h2>PROJECT</h2>
+	{% for i in range(0,len_projects) %}
+	<div class="project">
+		<p class="date">{{projects[i]['pstart']}} -<br> {{projects[i]['pend']}}</p>
+		<div class="job_data">
+			<h3>{{projects[i]['pname']}}</h3>
+			<p class="location"></p>
+			<p class="position">{{projects[i]['pdescription']}}</p>
+			<a class="link" href="{{projects[i]['plink']}}">View project</a>
+			&nbsp;
+		</div>
+	</div>
+	{% endfor %}
+
+	<!-- education -->
 	<h2>EDUCATION</h2>
 	{% for i in range(0,len_edu) %}
 	<div class="edu">
-		<p class="date">{{edu[i]['start']}} - {{edu[i]['end']}}</p>
+		<p class="date">{{edu[i]['start']}} -<br> {{edu[i]['end']}}</p>
 		<div class="edu_data">
 			<h3>{{edu[i]['clg']}}</h3>
 			<p class="location">{{edu[i]['gpa']}}</p>
@@ -49,6 +66,7 @@
 	</div>
 	{% endfor %}
 
+	<!-- skills -->
 	<h2>SKILLS &amp; TECHNOLOGIES</h2>
 	<ul>
 		{% for i in range(0,len_skills) %}
@@ -56,7 +74,8 @@
 		{% endfor %}
 	</ul>
 
-	<h2>INTERESTS</h2>
+	<!-- interests -->
+	<h2>INTERESTS / HOBBIES</h2>
 	<ul>
 		<li>Degree description</li>
 		<li>Interest description</li>

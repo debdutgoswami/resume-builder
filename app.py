@@ -37,7 +37,7 @@ def home():
             projects.append({
                 'pname': pname, 'pstart': pstart, 'pend': pend, 'pdescription': pdescription, 'plink': plink
             })
-
+        print(projects)
         return render_template('resume.html', skills=skills, len_skills=len(skills) , data=data, experience=exp, len_exp=len(exp), edu=edu, len_edu=len(edu), projects=projects, len_projects=len(projects))
 
 

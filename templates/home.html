@@ -25,6 +25,9 @@
         $('#projects').on('click', '#projbtn', function(){
             $('#addproj').clone().find("input:text").val("").end().appendTo('#proj');
         });
+        $('#interest').on('click', '#interestbtn', function(){
+            $('#iclone').clone().find("input:text").val("").end().appendTo('#interest-append');
+        });
     });
 </script>
 
@@ -61,7 +64,7 @@
         <h2>Projects</h2>
         <ul id="proj">
             <li id="addproj">
-                <input id="pname" type="text" name="pname" class="field-style field-split25 align-left" placeholder="Company Name" required/><br>
+                <input id="pname" type="text" name="pname" class="field-style field-split25 align-left" placeholder="Project Name" required/><br>
                 <input id="pstart" type="text" name="pstart" class="field-style field-split25 align-left" placeholder="Start Date" required/>
                 <input id="pend" type="text" name="pend" class="field-style field-split25 align-left" placeholder="End Date" required/><br>
                 <input id="pdescription" type="text" name="pdescription" class="field-style field-split25 align-left" placeholder="Description" required/><br>
@@ -97,6 +100,17 @@
             </div>
         </div>
         <img src="{{ url_for('static', filename='images/plus.png') }}" alt="" style="width:25px;height:25px; border: 0;" id="skillbtn">
+    </div>
+
+    <!-- interests / hobbies-->
+    <div class="interest" id="interest" style="padding-left: 3%;padding-right: 3%;">
+        <h2>Interest / Hobbies</h2>
+        <div id="interest-append">
+            <div id="iclone">
+                <input type="text" name="interest" id="interest" placeholder="Enter your interest / hobby" required>
+            </div>
+        </div>
+        <img src="{{ url_for('static', filename='images/plus.png') }}" alt="" style="width:25px;height:25px; border: 0;" id="interestbtn">
     </div>
 
     <!-- Submit Button -->

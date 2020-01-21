@@ -77,9 +77,9 @@
 	<!-- interests -->
 	<h2>INTERESTS / HOBBIES</h2>
 	<ul>
-		<li>Degree description</li>
-		<li>Interest description</li>
-		<li>Accomplishment of note</li>
+		{% for i in range(0, len_interests) %}
+		<li>{{interests[i]}}</li>
+		{% endfor %}
 	</ul>
 
 </body>

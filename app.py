@@ -14,7 +14,7 @@ def home():
     else:
         data = request.form # assigning request.form to data for better readability
         
-        exp, skills, edu, projects = list(), list(), list(), list()
+        exp, skills, edu, projects, interests = list(), list(), list(), list(), list()
 
         # extracting experience
         for cname, cpos, cstart, cend, cdescription, clocation in zip(data.getlist('cname'),data.getlist('cpos'),data.getlist('cstart'),data.getlist('cend'),data.getlist('cdescription'),data.getlist('clocation')):
@@ -37,8 +37,12 @@ def home():
             projects.append({
                 'pname': pname, 'pstart': pstart, 'pend': pend, 'pdescription': pdescription, 'plink': plink
             })
-        print(projects)
-        return render_template('resume.html', skills=skills, len_skills=len(skills) , data=data, experience=exp, len_exp=len(exp), edu=edu, len_edu=len(edu), projects=projects, len_projects=len(projects))
+        
+        # extracting interests
+        for interest in data.getlist('interest'):
+            interests.append(interest)
+
+        return render_template('resume.html', skills=skills, len_skills=len(skills) , data=data, experience=exp, len_exp=len(exp), edu=edu, len_edu=len(edu), projects=projects, len_projects=len(projects), interests=interests, len_interests=len(interests))
 
 
 

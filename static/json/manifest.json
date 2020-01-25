@@ -1,0 +1,15 @@
+{
+    "short_name": "Resume Builder",
+    "name": "Resume Builder",
+    "description": "An app to build the resume at ease.",
+    "icons": [
+      {
+        "src": "/plus.png",
+        "type": "image/png",
+        "sizes": "550x550"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+}

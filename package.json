@@ -1,0 +1,20 @@
+{
+  "name": "resume-builder",
+  "version": "1.0.0",
+  "description": "We all have faced this issue where we have been trying to create a resume and we just can't figure out the template or maybe we are away from our system and we need to give our `Resume` to some recruiter but we don't have access to our `Resume` (consideringwe did not store it in any online drive)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debdutgoswami/resume-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/debdutgoswami/resume-builder/issues"
+  },
+  "homepage": "https://github.com/debdutgoswami/resume-builder#readme"
+}

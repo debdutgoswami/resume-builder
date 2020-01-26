@@ -1,6 +1,6 @@
-import json
+import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 
 app = Flask(__name__)
 
@@ -10,7 +10,12 @@ app = Flask(__name__)
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
     if request.method == 'GET':
-        return render_template('home.html')
+        # caching the content for 10 min
+        template = render_template('home.html')
+        response = make_response(template)
+        response.headers['Cache-Control'] = 'public, max-age=300, s-maxage=600'
+
+        return response
     else:
         data = request.form # assigning request.form to data for better readability
         
@@ -57,4 +62,4 @@ def about():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT',8080)))

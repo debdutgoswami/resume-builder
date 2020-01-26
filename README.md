@@ -23,3 +23,9 @@ To solve this issue, I have made this simple python project which will automatic
 2. Front-end: HTML, CSS
 
 ---
+
+## Deployment used
+
+1. Google Cloud Platform (Cloud Run or App Engine)
+
+---

@@ -4,3 +4,4 @@
 #### ESSENTIAL LIBRARIES FOR MAIN FUNCTIONALITY ####
 
 Flask==1.1.1
+gunicorn

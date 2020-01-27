@@ -1,0 +1,2 @@
+- name: Cloud Run
+  uses: stefda/action-cloud-run@v1.0

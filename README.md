@@ -26,6 +26,14 @@ To solve this issue, I have made this simple python project which will automatic
 
 ## Deployment used
 
-1. Google Cloud Platform (Cloud Run or App Engine)
+1. Server: Cloud Run (Google Cloud Platform)
+
+2. Static: Firebase Hosting
+
+---
+
+## Deployed Website
+
+Resume Builder: [Official Website](https://completeyourresume.firebaseapp.com/)
 
 ---

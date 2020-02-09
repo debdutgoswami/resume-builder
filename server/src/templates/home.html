@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 {% block navbar %}
-<li><a class="active" href="/">Home</a></li>
-<li><a href="howtouse">How to use</a></li>
-<li><a class="right" href="about">About</a></li>
+<li class="nav-item active">
+<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="howtouse">How to Use</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about">About</a>
+</li>
 {% endblock %}
 
 {% block heading %}Resume Builder{% endblock %}
@@ -41,10 +47,11 @@
     </div>
 
     <!-- Basic -->
-    <div class="personal" style="padding-left: 3%;padding-right: 3%;">
+    <div class="form-group" style="padding-left: 3%;padding-right: 3%;">
         <h2>Basics</h2>
         <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="email" id="emailHelp" class="form-control" name="email" placeholder="Email" required>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         <input type="number" name="phone" placeholder="Phone number" required>
     </div>
 

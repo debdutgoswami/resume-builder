@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block navbar %}
 <li class="nav-item active">
-<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+<a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="howtouse">How to Use</a>
@@ -38,95 +38,167 @@
 </script>
 
 <!-- Form -->
-<form method="POST" action="/" id="f1">
+<form method="POST" action="/" id="f1" style="padding: 2%;">
 
     <!-- about -->
-    <div class="about" style="padding-left: 3%; padding-right: 3%;">
-        <h2>About</h2>
-        <textarea name="about" placeholder="About Me" required></textarea>
+    <h2>About</h2>
+    <div class="overflow-hidden">
+        <label for="inputAbout">Tell us something about  yourself</label>
+        <textarea name="about" id="inputAbout" class="form-control overflow-hidden" required></textarea><br>
     </div>
 
     <!-- Basic -->
-    <div class="form-group" style="padding-left: 3%;padding-right: 3%;">
-        <h2>Basics</h2>
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" id="emailHelp" class="form-control" name="email" placeholder="Email" required>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        <input type="number" name="phone" placeholder="Phone number" required>
+    <h2>Basics</h2>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputName4">Name</label>
+            <input type="text" name="name" class="form-control" id="inputName4" required>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" name="email" class="form-control" id="inputEmail4" required>
+            <small id="inputEmail4" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPhone">Phone</label>
+          <input type="number" id="inputPhone" name="phone" class="form-control" required>
+        </div>
     </div>
+    <br>
 
     <!-- Experience -->
-    <div class="experience" id="exp" style="padding-left: 3%; padding-right: 3%;">
-        <h2>Experience</h2>
+    <h2>Experience</h2>
+    <div class="experience" id="exp">
         <ul id="tb2">
             <li id="addrow">
-                <input id="cname" type="text" name="cname" class="field-style field-split25 align-left" placeholder="Company Name" required/><br>
-                <input id="cpos" type="text" name="cpos" class="field-style field-split25 align-left" placeholder="Position" required/>
-                <input id="clocation" type="text" name="clocation" class="field-style field-split25 align-left" placeholder="Location" required/><br>
-                <input id="cstart" type="text" name="cstart" class="field-style field-split25 align-left" placeholder="Start Date" required/>
-                <input id="cend" type="text" name="cend" class="field-style field-split25 align-left" placeholder="End Date" required/><br>
-                <textarea id="cdescription" type="text" name="cdescription" class="field-style field-split25 align-left" placeholder="Description" required></textarea>
-                <br><br>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputcompany">Comnpany</label>
+                    <input type="text" class="form-control" name="cname" id="inputcompany">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputposition">Position</label>
+                    <input type="text" name="cpos" class="form-control" id="inputposition">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputlocation">Location</label>
+                    <input type="text" name="clocation" class="form-control" id="inputlocation">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputstart">Joining Date</label>
+                    <input type="date" name="cstart" class="form-control" id="inputstart">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputend">Ending Date</label>
+                    <input type="date" name="cend" class="form-control" id="inputend">
+                    <small id="helpId" class="text-muted">If you are still working enter todays date</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputdescription">Description</label>
+                <textarea id="inputdescription" class="form-control" type="text" name="cdescription"></textarea>
+            </div>
             </li>
+            <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="addbtn">
         </ul>
-        <img src="images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="addbtn">
     </div>
 
     <!-- Projects -->
-    <div class="projects" id="projects" style="padding-left: 3%; padding-right: 3%;">
-        <h2>Projects</h2>
+    <h2>Projects</h2>
+    <div class="projects" id="projects">
         <ul id="proj">
             <li id="addproj">
-                <input id="pname" type="text" name="pname" class="field-style field-split25 align-left" placeholder="Project Name" required/><br>
-                <input id="pstart" type="text" name="pstart" class="field-style field-split25 align-left" placeholder="Start Date" required/>
-                <input id="pend" type="text" name="pend" class="field-style field-split25 align-left" placeholder="End Date" required/><br>
-                <textarea id="pdescription" type="text" name="pdescription" class="field-style field-split25 align-left" placeholder="Description" required></textarea><br>
-                <input id="plink" type="url" name="plink" class="field-style field-split25 align-left" placeholder="Link" required/>
-                <br><br>
+                <div class="form-group">
+                    <label for="inputproject">Comnpany</label>
+                    <input type="text" class="form-control" name="pname" id="inputproject">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputstart">Starting Date</label>
+                        <input type="date" name="pstart" class="form-control" id="inputstart">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputend">Ending Date</label>
+                        <input type="date" name="pend" class="form-control" id="inputend">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputdescription">Description</label>
+                    <textarea id="inputdescription" class="form-control" type="text" name="pdescription"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="inputlink">Link</label>
+                  <input type="url" name="plink" id="inputlink" class="form-control">
+                </div>
+                </li>
+                <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="addbtn">
             </li>
         </ul>
-        <img src="images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="projbtn">
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="projbtn">
     </div>
 
     <!-- Education -->
-    <div class="education" id="edu" style="padding-left: 3%; padding-right: 3%;">
-        <h2>Education</h2>
+    <h2>Education</h2>
+    <div class="education" id="edu">
         <ul id="tb1">
             <li id="addedu">
-                <input name="clg"  type="text" placeholder="College/University Name" required>
-                <input name="gpa" type="text" placeholder="GPA" required><br>
-                <input name="degree" type="text" placeholder="Degree" required><br>
-                <input name="start" type="text" placeholder="Start Date" required>
-                <input name="end" type="text" placeholder="Ending Date (expected)" required>
-                <br><br>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputclg">College/University Name</label>
+                        <input type="text" name="clg" class="form-control" id="inputclg">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputgpa">GPA</label>
+                        <input type="text" name="gpa" id="inputgpa" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputdegree">Degree</label>
+                        <input type="text" name="degree" id="inputdegree" class="form-control">
+                      </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputstart">Joining Date</label>
+                        <input type="text" name="start" class="form-control" id="inputstart">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputend">Ending Date (expected)</label>
+                        <input type="text" name="end" id="inputend" class="form-control">
+                    </div>
+                </div>
             </li>
         </ul>
-        <img src="images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="btnaddedu">
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="btnaddedu">
     </div>
 
     <!-- Skills -->
-    <div class="skills" id="skills" style="padding-left: 3%;padding-right: 3%;">
-        <h2>Skills &amp; Technologies</h2>
-        <div id="skill-append">
-            <div id="sclone">
-            <input type="text" name="skill" id="skill" placeholder="Enter your skills" required>
+    <h2>Skills &amp; Technologies</h2>
+    <div class="skills" id="skills">
+        <div id="skill-append" class="form-row">
+            <div id="sclone" class="form-group col-md-2">
+                <input type="text" name="skill" class="form-control" id="skill">
             </div>
         </div>
-        <img src="images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="skillbtn">
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="skillbtn">
     </div>
 
     <!-- interests / hobbies-->
-    <div class="interest" id="interest" style="padding-left: 3%;padding-right: 3%;">
-        <h2>Interest / Hobbies</h2>
-        <div id="interest-append">
-            <div id="iclone">
-                <input type="text" name="interest" id="interest" placeholder="Enter your interest / hobby" required>
+    <h2>Interest / Hobbies</h2>
+    <div class="interest" id="interest">
+        <div id="interest-append" class="form-row">
+            <div id="iclone" class="form-group col-md-2">
+                <input type="text" name="interest" class="form-control" id="interest">
             </div>
         </div>
-        <img src="images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="interestbtn">
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="interestbtn">
     </div>
 
     <!-- Submit Button -->
-    <input class="btn btn-primary" type="submit" value="Submit">
+    <input class="btn btn-primary" type="submit" value="Submit" style="text-align: center;">
 </form>
 {% endblock %}

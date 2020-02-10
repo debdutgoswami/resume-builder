@@ -23,6 +23,7 @@
 	<p class="data">{{data['about']}}</p>
 
 	<!-- experience -->
+	{% if len_exp > 0 %}
 	<h2>EXPERIENCE</h2>
 	{% for i in range(0,len_exp) %}
 	<div class="job">
@@ -36,8 +37,10 @@
 		</div>
 	</div>
 	{% endfor %}
+	{% endif %}
 
 	<!-- project -->
+	{% if len_projects > 0 %}
 	<h2>PROJECT</h2>
 	{% for i in range(0,len_projects) %}
 	<div class="project">
@@ -46,13 +49,15 @@
 			<h3>{{projects[i]['pname']}}</h3>
 			<p class="location"></p>
 			<p class="position">{{projects[i]['pdescription']}}</p>
-			<a class="link" href="{{projects[i]['plink']}}">View project</a>
+			<a class="link" href="{{projects[i]['plink']}}">{{projects[i]['plink']}}</a>
 			&nbsp;
 		</div>
 	</div>
 	{% endfor %}
+	{% endif %}
 
 	<!-- education -->
+	{% if len_edu %}
 	<h2>EDUCATION</h2>
 	{% for i in range(0,len_edu) %}
 	<div class="edu">
@@ -65,23 +70,34 @@
 		</div>
 	</div>
 	{% endfor %}
+	{% endif %}
 
 	<!-- skills -->
+	{% if len_skills > 0 %}
 	<h2>SKILLS &amp; TECHNOLOGIES</h2>
 	<ul>
 		{% for i in range(0,len_skills) %}
 		<li>{{ skills[i] }}</li>
 		{% endfor %}
 	</ul>
+	{% endif %}
 
 	<!-- interests -->
+	{% if len_interests > 0 %}
 	<h2>INTERESTS / HOBBIES</h2>
 	<ul>
 		{% for i in range(0, len_interests) %}
 		<li>{{interests[i]}}</li>
 		{% endfor %}
 	</ul>
+	{% endif %}
+	<button onclick="myFunction()" class="dontprint">Print your resume</button>
 
+	<script>
+		function myFunction() {
+ 			window.print();
+		}
+	</script>
 </body>
 
 </html>

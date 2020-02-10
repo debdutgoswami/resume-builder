@@ -74,7 +74,7 @@
             <li id="addrow">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputcompany">Comnpany</label>
+                    <label for="inputcompany">Company</label>
                     <input type="text" class="form-control" name="cname" id="inputcompany">
                 </div>
             </div>
@@ -91,12 +91,13 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputstart">Joining Date</label>
-                    <input type="date" name="cstart" class="form-control" id="inputstart">
+                    <input type="text" name="cstart" class="form-control" id="inputstart">
+                    <small id="helpId" class="text-muted">Format: Month, yyyy</small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputend">Ending Date</label>
-                    <input type="date" name="cend" class="form-control" id="inputend">
-                    <small id="helpId" class="text-muted">If you are still working enter todays date</small>
+                    <input type="text" name="cend" class="form-control" id="inputend">
+                    <small id="helpId" class="text-muted">If you are still working then enter 'Present'</small>
                 </div>
             </div>
             <div class="form-group">
@@ -104,9 +105,10 @@
                 <textarea id="inputdescription" class="form-control" type="text" name="cdescription"></textarea>
             </div>
             </li>
-            <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="addbtn">
         </ul>
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0; text-align: center;" id="addbtn">
     </div>
+    <br>
 
     <!-- Projects -->
     <h2>Projects</h2>
@@ -114,17 +116,19 @@
         <ul id="proj">
             <li id="addproj">
                 <div class="form-group">
-                    <label for="inputproject">Comnpany</label>
+                    <label for="inputproject">Project Name</label>
                     <input type="text" class="form-control" name="pname" id="inputproject">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputstart">Starting Date</label>
-                        <input type="date" name="pstart" class="form-control" id="inputstart">
+                        <input type="text" name="pstart" class="form-control" id="inputstart">
+                        <small id="helpId" class="text-muted">Format: Month, yyyy</small>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputend">Ending Date</label>
-                        <input type="date" name="pend" class="form-control" id="inputend">
+                        <input type="text" name="pend" class="form-control" id="inputend">
+                        <small id="helpId" class="text-muted">Format: Month, yyyy</small>
                     </div>
                 </div>
                 <div class="form-group">
@@ -136,11 +140,11 @@
                   <input type="url" name="plink" id="inputlink" class="form-control">
                 </div>
                 </li>
-                <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="addbtn">
             </li>
         </ul>
-        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="projbtn">
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0; text-align: center;" id="projbtn">
     </div>
+    <br>
 
     <!-- Education -->
     <h2>Education</h2>
@@ -165,16 +169,19 @@
                     <div class="form-group col-md-6">
                         <label for="inputstart">Joining Date</label>
                         <input type="text" name="start" class="form-control" id="inputstart">
+                        <small id="helpId" class="text-muted">Format: Month, yyyy</small>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputend">Ending Date (expected)</label>
                         <input type="text" name="end" id="inputend" class="form-control">
+                        <small id="helpId" class="text-muted">Format: Month, yyyy</small>
                     </div>
                 </div>
             </li>
         </ul>
-        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="btnaddedu">
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0; text-align: center;" id="btnaddedu">
     </div>
+    <br>
 
     <!-- Skills -->
     <h2>Skills &amp; Technologies</h2>
@@ -184,8 +191,9 @@
                 <input type="text" name="skill" class="form-control" id="skill">
             </div>
         </div>
-        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="skillbtn">
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0; text-align: center;" id="skillbtn">
     </div>
+    <br>
 
     <!-- interests / hobbies-->
     <h2>Interest / Hobbies</h2>
@@ -195,10 +203,11 @@
                 <input type="text" name="interest" class="form-control" id="interest">
             </div>
         </div>
-        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0;" id="interestbtn">
+        <img src="../images/plus.png" alt="" style="width:25px;height:25px; border: 0; text-align: center;" id="interestbtn">
     </div>
+    <br>
 
     <!-- Submit Button -->
-    <input class="btn btn-primary" type="submit" value="Submit" style="text-align: center;">
+    <input class="btn btn-primary" type="submit" value="Submit" style="text-align: center; text-align: center;">
 </form>
 {% endblock %}

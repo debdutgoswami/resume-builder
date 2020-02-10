@@ -110,3 +110,6 @@ body div ul {
 #meta {
 	display: none;
 }
+.dontprint {
+	visibility: hidden;
+}

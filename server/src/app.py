@@ -1,9 +1,11 @@
+# system
 import os
+from datetime import date
 
+# flask
 from flask import Flask, render_template, request, make_response
 
 app = Flask(__name__)
-
 
 # home route
 @app.route('/', methods = ['GET', 'POST'])
@@ -18,7 +20,7 @@ def home():
         return response
     else:
         data = request.form # assigning request.form to data for better readability
-        
+
         exp, skills, edu, projects, interests = list(), list(), list(), list(), list()
 
         # extracting experience
@@ -26,27 +28,42 @@ def home():
             exp.append({
                 'cname': cname, 'cpos': cpos, 'cstart': cstart, 'cend': cend, 'cdescription':cdescription, 'clocation':clocation
             })
-
+        # checking wether experience is empty or not
+        if(list(exp[0].values())[0] == ''):
+            exp = []
+        
         # extracting skills
         for skill in data.getlist('skill'):
             skills.append(skill)
-
+        # checking wether experience is empty or not
+        if(skills[0] == ''):
+            skills = []
+        
         # extracting education
         for clg, degree, gpa, start, end in zip(data.getlist('clg'), data.getlist('degree'), data.getlist('gpa'), data.getlist('start'), data.getlist('end')):
             edu.append({
                 'clg':clg, 'degree': degree, 'gpa': gpa, 'start': start, 'end': end
             })
-
+        # checking wether education is empty or not
+        if(list(edu[0].values())[0] == ''):
+            edu = []
+        
         # extracting projects
         for pname, pstart, pend, pdescription, plink in zip(data.getlist('pname'), data.getlist('pstart'), data.getlist('pend'), data.getlist('pdescription'), data.getlist('plink')):
             projects.append({
                 'pname': pname, 'pstart': pstart, 'pend': pend, 'pdescription': pdescription, 'plink': plink
             })
+        # checking wether projects is empty or not
+        if(list(projects[0].values())[0] == ''):
+            projects = []
         
         # extracting interests
         for interest in data.getlist('interest'):
             interests.append(interest)
-
+        # checking wether interests is empty or not
+        if(interests[0] == ''):
+            interests = []
+        
         return render_template('resume.html', skills=skills, len_skills=len(skills) , data=data, experience=exp, len_exp=len(exp), edu=edu, len_edu=len(edu), projects=projects, len_projects=len(projects), interests=interests, len_interests=len(interests))
 
 
@@ -62,4 +79,4 @@ def about():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT',8080)), debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT',8080)))
